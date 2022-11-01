@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "build:github": "nx build mediasecurity -- --prod --baseHref=/mediasecurity/",
     "test": "nx test"
   },
   "private": true,
