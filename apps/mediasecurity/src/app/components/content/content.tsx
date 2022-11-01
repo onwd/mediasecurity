@@ -12,13 +12,13 @@ export function Content({ children, onTypingDone }: { children: ReactNode, onTyp
 
   return (
     <div className={styles['content']}>
-      {/* <Typist
+      <Typist
         typingDelay={50}
         cursor={(shouldShowCursor) ? <span className={styles['cursor']}>█</span> : ''}
         onTypingDone={handleTypingDone}
-      > */}
+      >
         {children}
-      {/* </Typist> */}
+      </Typist>
     </div>
   );
 };
