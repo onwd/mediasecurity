@@ -1,0 +1,25 @@
+@keyframes fly {
+  0% {transform: rotateZ(0);}
+  25% {transform: rotateZ(5deg);}
+  50% {transform: rotateZ(0);}
+  75% {transform: rotateZ(-5deg);}
+  100% {transform: rotateZ(0);}
+}
+
+.app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.highlight {
+  font-weight: 600;
+  font-size: 40px;
+  color: #06CFF1;
+  display: inline-block;
+
+  animation: fly infinite 2s linear;
+}

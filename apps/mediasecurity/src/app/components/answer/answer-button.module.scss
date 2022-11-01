@@ -1,0 +1,25 @@
+@keyframes correct {
+  0% {}
+  25% {background: #51cf66;}
+  50% {background: #51cf66;}
+  75% {background: #51cf66;}
+  100% {background: #51cf66; transform: scale(1.1);}
+}
+
+@keyframes wrong {
+  0% {background: #ff6b6b; transform: rotateZ(0deg);}
+  25% {background: #ff6b6b; transform: rotateZ(-5deg);}
+  50% {background: #ff6b6b;}
+  75% {transform: rotateZ(5deg);}
+  100% {transform: rotateZ(0deg);}
+}
+
+.answer-button {
+  &__correct {
+    animation: correct 2s;
+  }
+
+  &__wrong {
+    animation: wrong 0.5s;
+  }
+}

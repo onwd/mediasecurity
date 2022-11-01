@@ -1,0 +1,91 @@
+@keyframes fly {
+  0% {transform: translateY(0) rotateZ(-1deg); filter: hue-rotate(0);}
+  50% {transform: translateY(-32px) rotateZ(0deg); filter: hue-rotate(45deg);}
+  100% {transform: translateY(0) rotateZ(-1deg); filter: hue-rotate(0);}
+}
+
+@keyframes greeting {
+  0% {transform: translate(0, 0) rotateZ(-30deg);}
+  50% {transform: translate(0, 0) rotateZ(30deg);}
+  100% {transform: translate(0, 0) rotateZ(-30deg);}
+}
+
+@keyframes talking {
+  0% {transform: rotateX(0) rotateZ(0);}
+  25% {transform: rotateX(90deg) rotateZ(5deg);}
+  40% {transform: rotateX(0) rotateZ(0);}
+  60% {transform: rotateX(90deg) rotateZ(5deg);}
+  100% {transform: rotateX(0) rotateZ(0);}
+}
+
+.robot {
+  $robot: &;
+
+  position: absolute;
+  bottom: -32px;
+  right: 64px;
+  width: 387px;
+  height: 680px;
+
+  &_head_wrapper {
+    position: absolute;
+    top: 0;
+    left: 27px;
+
+    #{$robot}_head {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #{$robot}_mouth {
+      position: absolute;
+      left: 153px;
+      top: 308px;
+    }
+  }
+
+  &_body_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    #{$robot}_body {
+      position: absolute;
+      left: 96px;
+      top: 394px;
+    }
+
+    #{$robot}_righthand {
+      position: absolute;
+      left: 0;
+      top: 392px;
+      transform: translate(-12px, -48px) rotateZ(-105deg);
+      transform-origin: 100% 75%;
+    }
+  }
+
+  &_shadow {
+    position: absolute;
+    top: 585px;
+    left: 97px;
+  }
+
+  &__flying {
+    #{$robot}_head_wrapper, #{$robot}_body_wrapper {
+      animation: fly infinite 5s ease-in-out;
+    }
+  }
+
+  &__greeting {
+    #{$robot}_righthand {
+      animation: greeting infinite 1s ease-in-out;
+    }
+  }
+
+  &__talking {
+    #{$robot}_mouth {
+      animation: talking infinite 1s linear;
+    }
+  }
+}

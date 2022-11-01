@@ -1,0 +1,25 @@
+.button {
+  background: #06CFF1;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 24px;
+  font-family: 'Anonymous Pro';
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+
+  &:hover, &:focus {
+    background: lighten(#06CFF1, 10%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background: darken(#06CFF1, 5%);
+  }
+}
