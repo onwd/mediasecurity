@@ -1,4 +1,10 @@
+@keyframes show {
+  0% {transform: scale(0); opacity: 0;}
+  100% {}
+}
+
 .content-buttons {
+  animation: show 1s;
   display: flex;
   margin-top: 48px;
   justify-content: center;
