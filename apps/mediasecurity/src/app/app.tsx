@@ -9,7 +9,7 @@ import Typist from 'react-typist-component';
 import { Step } from './enums/step';
 import { AnswerButton } from './components/answer/answer-button';
 
-const INITIAL_STEP = Step.QUESTION_INTERNET;
+const INITIAL_STEP = Step.GREETING;
 
 export function App() {
   const [isTalking, setIsTalking] = useState<boolean>(true);
