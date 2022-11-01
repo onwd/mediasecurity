@@ -128,9 +128,9 @@ export function App() {
         <>
           В Интернете мы можем с вами найти много разной информации: <Typist.Delay ms={500} />смотреть мультфильмы<Typist.Delay ms={500} />, фильмы<Typist.Delay ms={500} />, слушать музыку<Typist.Delay ms={500} />, читать книги<Typist.Delay ms={500} />, играть в игры<Typist.Delay ms={500} />, получать новые знания<Typist.Delay ms={500} />, находить ответы на свои вопросы.<Typist.Delay ms={1000} /><br/>
           <br/>
-          Эта информация находится на сайтах.<Typist.Delay ms={1000} /><span className={styles['highlight']}>Сайт</span> – это Интернет-ресурс, состоящий из одной или нескольких виртуальных страниц, которые содержат различную информацию.<Typist.Delay ms={1000} /><br/>
+          Эта информация находится на сайтах.<Typist.Delay ms={1000} /> <span className={styles['highlight']}>Сайт</span> – это Интернет-ресурс, состоящий из одной или нескольких виртуальных страниц, которые содержат различную информацию.<Typist.Delay ms={1000} /><br/>
           <br/>
-          Есть полезные сайты, а есть опасные.<Typist.Delay ms={500} />Если вы зашли на сайт и вылезло окно красного цвета, нужно сразу позвать родителей!<Typist.Delay ms={1000} />
+          Есть полезные сайты, а есть опасные.<Typist.Delay ms={500} /> Если вы зашли на сайт и вылезло окно красного цвета, нужно сразу позвать родителей!<Typist.Delay ms={1000} />
           <ContentButtons>
             <Button onClick={goToNextStep}>
               Далее
@@ -145,7 +145,9 @@ export function App() {
         <>
           Давайте решим задачу:<Typist.Delay ms={1000} /><br/>
           <br/>
-          Вы заходите на сайт и вылезает красное окошко на весь экран.<Typist.Delay ms={500} /> Как вы поступите?<Typist.Delay ms={1000} />
+          Вы заходите на сайт и вылезает красное окошко на весь экран.<Typist.Delay ms={500} /><br/>
+          <br/>
+          Как вы поступите?<Typist.Delay ms={1000} />
           <ContentButtons>
             <AnswerButton isCorrect={false}>
               Нажму на красное окошко
@@ -171,7 +173,8 @@ export function App() {
           <br/>
           Не стоит использовать слишком простые пароли для своих аккаунтов в Интернете, потому что их очень легко взломать.<Typist.Delay ms={1000} /><br/>
           <br/>
-          Придумайте такой пароль, который вы легко сможете запомнить.<Typist.Delay ms={1000} />Никому не сообщайте данные для входа в свой аккаунт.<Typist.Delay ms={1000} />
+          Придумайте такой пароль, который вы легко сможете запомнить.<Typist.Delay ms={1000} /><br/>
+          Никому не сообщайте данные для входа в свой аккаунт.<Typist.Delay ms={1000} />
           <ContentButtons>
             <Button onClick={goToNextStep}>
               Далее
@@ -184,7 +187,9 @@ export function App() {
     if (step === Step.QUESTION_ACCOUNT_1) {
       return (
         <>
-          У Коли день рождения <span className={styles['highlight']}>10.10.2010</span>.<Typist.Delay ms={1000} /> Он решил создать аккаунт в социальной сети.<Typist.Delay ms={1000} /> Помогите выбрать для него безопасный пароль:<Typist.Delay ms={1000} />
+          У Коли день рождения <span className={styles['highlight']}>10.10.2010</span>.<Typist.Delay ms={1000} /> Он решил создать аккаунт в социальной сети.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          Помогите выбрать для него безопасный пароль:<Typist.Delay ms={1000} />
           <ContentButtons>
             <AnswerButton isCorrect={false}>
               12345
@@ -211,7 +216,9 @@ export function App() {
     if (step === Step.QUESTION_ACCOUNT_2) {
       return (
         <>
-          Саша создал аккаунт в компьютерной игре.<Typist.Delay ms={1000} /> Его новый знакомый попросил данные от аккаунта Саши, чтобы поиграть в игру.<Typist.Delay ms={1000} /> Что следует сделать Саше?<Typist.Delay ms={1000} />
+          Саша создал аккаунт в компьютерной игре.<Typist.Delay ms={1000} /> Его новый знакомый попросил данные от аккаунта Саши, чтобы поиграть в игру.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          Что следует сделать Саше?<Typist.Delay ms={1000} />
           <ContentButtons>
             <AnswerButton isCorrect={false}>
               Сообщить данные в сообщении
