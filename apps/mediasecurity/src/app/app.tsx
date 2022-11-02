@@ -448,10 +448,12 @@ export function App() {
     <>
       <div className={styles['app']}>
         <Background />
-        <Robot isGreeting={step === Step.GREETING} isTalking={isTalking} />
-        <Content key={step} onTypingDone={onTypingDone}>
-          {renderContent()}
-        </Content>
+        <div className={styles['app_content']}>
+          <Content key={step} onTypingDone={onTypingDone}>
+            {renderContent()}
+          </Content>
+          <Robot isGreeting={step === Step.GREETING} isTalking={isTalking} />
+        </div>
       </div>
     </>
   );

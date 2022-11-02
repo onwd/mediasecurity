@@ -3,10 +3,10 @@
   color: #fff;
   cursor: pointer;
   border: none;
-  border-radius: 16px;
-  padding: 12px 24px;
+  border-radius: calc(100vw / 120);
+  padding: calc(100vw / 160) calc(100vw / 80);
   font-family: 'Anonymous Pro';
-  font-size: 48px;
+  font-size: calc(100vw / 40);
   font-style: italic;
   font-weight: 600;
   transition: all 0.2s ease-in-out;

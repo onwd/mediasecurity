@@ -1,6 +1,8 @@
+@use 'sass:math';
+
 @keyframes fly {
   0% {transform: translateY(0) rotateZ(-1deg); filter: hue-rotate(0);}
-  50% {transform: translateY(-32px) rotateZ(0deg); filter: hue-rotate(45deg);}
+  50% {transform: translateY(-1 * calc(100vw / 60)) rotateZ(0deg); filter: hue-rotate(45deg);}
   100% {transform: translateY(0) rotateZ(-1deg); filter: hue-rotate(0);}
 }
 
@@ -21,27 +23,44 @@
 .robot {
   $robot: &;
 
-  position: absolute;
-  bottom: -32px;
-  right: 64px;
-  width: 387px;
-  height: 680px;
+  $originalWidth: 387;
+  $originalHeight: 680;
+
+  position: relative;
+  min-width: 25%;
+  aspect-ratio: math.div($originalWidth, $originalHeight);
 
   &_head_wrapper {
     position: absolute;
+    left: percentage(math.div(27, $originalWidth));
     top: 0;
-    left: 27px;
+    width: 100%;
+    height: 100%;
 
     #{$robot}_head {
       position: absolute;
       left: 0;
       top: 0;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: percentage(math.div(361, $originalWidth));
+        height: percentage(math.div(385, $originalHeight));
+      }
     }
 
     #{$robot}_mouth {
       position: absolute;
-      left: 153px;
-      top: 308px;
+      left: percentage(math.div(153, $originalWidth));
+      top: percentage(math.div(308, $originalHeight));
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: percentage(math.div(72, $originalWidth));
+        height: percentage(math.div(40, $originalHeight));
+      }
     }
   }
 
@@ -49,26 +68,49 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
 
     #{$robot}_body {
       position: absolute;
-      left: 96px;
-      top: 394px;
+      left: percentage(math.div(96, $originalWidth));
+      top: percentage(math.div(394, $originalHeight));
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: percentage(math.div(248, $originalWidth));
+        height: percentage(math.div(184, $originalHeight));
+      }
     }
 
     #{$robot}_righthand {
       position: absolute;
+      width: 100%;
+      height: 100%;
       left: 0;
-      top: 392px;
-      transform: translate(-12px, -48px) rotateZ(-105deg);
-      transform-origin: 100% 75%;
+      top: percentage(math.div(392, $originalHeight));
+
+      svg {
+        width: percentage(math.div(129, $originalWidth));
+        height: percentage(math.div(75, $originalHeight));
+        transform: translate(-1 * math.div(12px, $originalWidth), -1 * math.div(48px, $originalHeight)) rotateZ(-105deg);
+        transform-origin: 100% 75%;
+      }
     }
   }
 
   &_shadow {
     position: absolute;
-    top: 585px;
-    left: 97px;
+    left: percentage(math.div(97, $originalWidth));
+    top: percentage(math.div(585, $originalHeight));
+    width: 100%;
+    height: 100%;
+
+    svg {
+      width: percentage(math.div(231, $originalWidth));
+      height: percentage(math.div(95, $originalHeight));
+    }
   }
 
   &__flying {
@@ -78,13 +120,13 @@
   }
 
   &__greeting {
-    #{$robot}_righthand {
+    #{$robot}_righthand svg {
       animation: greeting infinite 1s ease-in-out;
     }
   }
 
   &__talking {
-    #{$robot}_mouth {
+    #{$robot}_mouth svg {
       animation: talking infinite 1s linear;
     }
   }
