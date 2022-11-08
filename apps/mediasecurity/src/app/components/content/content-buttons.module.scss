@@ -9,4 +9,8 @@
   margin-top: calc(100vw / 40);
   justify-content: center;
   gap: calc(100vw / 60);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }

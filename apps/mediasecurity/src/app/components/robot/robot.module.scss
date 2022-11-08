@@ -43,6 +43,7 @@
       top: 0;
       width: 100%;
       height: 100%;
+      display: flex;
 
       svg {
         width: percentage(math.div(361, $originalWidth));
@@ -56,6 +57,7 @@
       top: percentage(math.div(308, $originalHeight));
       width: 100%;
       height: 100%;
+      display: flex;
 
       svg {
         width: percentage(math.div(72, $originalWidth));
@@ -77,6 +79,7 @@
       top: percentage(math.div(394, $originalHeight));
       width: 100%;
       height: 100%;
+      display: flex;
 
       svg {
         width: percentage(math.div(248, $originalWidth));
@@ -90,6 +93,7 @@
       height: 100%;
       left: 0;
       top: percentage(math.div(392, $originalHeight));
+      display: flex;
 
       svg {
         width: percentage(math.div(129, $originalWidth));
@@ -106,6 +110,7 @@
     top: percentage(math.div(585, $originalHeight));
     width: 100%;
     height: 100%;
+    display: flex;
 
     svg {
       width: percentage(math.div(231, $originalWidth));

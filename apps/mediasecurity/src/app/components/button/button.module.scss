@@ -1,3 +1,5 @@
+@import '../../../variables.scss'; // TODO: should use "@use" instead of "@import"
+
 .button {
   background: #06CFF1;
   color: #fff;
@@ -10,6 +12,11 @@
   font-style: italic;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
+
+  @media (max-width: 768px) {
+    font-size: calc(100vw / 40 * $mobileScalingFactor);
+    padding: calc(100vw / 160 * $mobileScalingFactor) calc(100vw / 80 * $mobileScalingFactor);
+  }
 
   &:hover, &:focus {
     background: lighten(#06CFF1, 10%);
