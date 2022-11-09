@@ -14,6 +14,7 @@ const INITIAL_STEP = Step.START;
 export function App() {
   const [isTalking, setIsTalking] = useState<boolean>(true);
   const [step, setStep] = useState<Step>(INITIAL_STEP);
+  const [isCopyrightInformationVisible, setIsCopyrightInformationVisible] = useState<boolean>(false);
 
   useEffect(() => {
     if (window.location.search.includes('qr')) {
@@ -28,6 +29,14 @@ export function App() {
   const goToNextStep = () => {
     setStep((step) => step + 1);
     setIsTalking(true);
+  };
+
+  const showCopyrightInformation = () => {
+    setIsCopyrightInformationVisible(true);
+  };
+
+  const hideCopyrightInformation = () => {
+    setIsCopyrightInformationVisible(false);
   };
 
   const renderContent = () => {
@@ -565,6 +574,27 @@ export function App() {
           {(step > Step.START) ? (
             <Robot isGreeting={step === Step.GREETING} isTalking={isTalking} />
           ) : null}
+        </div>
+        <div className={styles['app_copyright']}>
+          <a onClick={showCopyrightInformation}>©</a>
+        </div>
+        <div className={styles['copyright'] + ' ' + ((isCopyrightInformationVisible) ? styles['copyright__visible'] : '')}>
+          <div className={styles['copyright_close']}>
+            <a onClick={hideCopyrightInformation}>✖</a>
+          </div>
+          <div className={styles['copyright_content']}>
+            Некоторые ресурсы, использованные при создании этой игры, были взяты из открытых источников.<br/>
+            <br/>
+            Мы выражаем благодарность авторам этих ресурсов:<br/>
+            <br/>
+            Изображение паутины: <a href="https://www.svgrepo.com/svg/55672/spider-web" target="_blank">https://www.svgrepo.com/svg/55672/spider-web</a><br/>
+            <br/>
+            Изображение москитной сетки: <a href="https://thenounproject.com/icon/mosquito-net-3651002" target="_blank">https://thenounproject.com/icon/mosquito-net-3651002</a><br/>
+            <br/>
+            Изображение рыболовной сети: <a href="https://thenounproject.com/icon/fish-net-2760122" target="_blank">https://thenounproject.com/icon/fish-net-2760122</a><br/>
+            <br/>
+            Изображение робота: <a href="https://www.figma.com/community/file/918948005672594908" target="_blank">https://www.figma.com/community/file/918948005672594908</a>
+          </div>
         </div>
       </div>
     </>
