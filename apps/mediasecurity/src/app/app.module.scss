@@ -86,6 +86,9 @@ a {
     font-style: italic;
     font-size: calc(100vw / 60);
     padding: calc(100vw / 40) calc(100vw / 40) calc(100vw / 40) calc(100vw / 20);
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 
     @media (max-width: 768px) {
       font-size: calc(100vw / 60 * $mobileScalingFactor);
