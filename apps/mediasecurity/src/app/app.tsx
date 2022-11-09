@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './app.module.scss';
 import { Background } from './components/background/background';
 import { Button } from './components/button/button';
@@ -14,6 +14,12 @@ const INITIAL_STEP = Step.GREETING;
 export function App() {
   const [isTalking, setIsTalking] = useState<boolean>(true);
   const [step, setStep] = useState<Step>(INITIAL_STEP);
+
+  useEffect(() => {
+    if (window.location.search.includes('qr')) {
+      setStep(Step.QR_CODE_SCANNED);
+    }
+  }, []);
 
   const onTypingDone = () => {
     setIsTalking(false);
@@ -439,7 +445,83 @@ export function App() {
       );
     }
 
-    return <span style={{ fontSize: '64px' }}>👨‍💻 Не реализовано</span>;
+    if (step === Step.QR_CODES) {
+      return (
+        <>
+          В нашем мире существует много интересных информационных технологий. И одна из них – это <span className={styles['highlight']}>QR-код</span>.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          QR-код это рисунок, который можно отсканировать с помощью смартфона, чтобы быстро получить доступ к информации.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          С помощью QR-кода можно: <Typist.Delay ms={500} />посмотреть рекламу<Typist.Delay ms={500} />, оплатить товары в магазине<Typist.Delay ms={500} />, открыть сайт<Typist.Delay ms={500} />, и другое.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          Но будь осторожен!<Typist.Delay ms={500} /> В QR-коде может оказаться и небезопасная для тебя информация!<Typist.Delay ms={1000} />
+          <Typist.Paste>
+            <ContentButtons>
+              <Button onClick={goToNextStep}>
+                Далее
+              </Button>
+            </ContentButtons>
+          </Typist.Paste>
+        </>
+      );
+    }
+
+    if (step === Step.QUESTION_QR_CODES) {
+      return (
+        <>
+          Коля навел камеру смартфона на QR-код, отсканировал его и перешел по ссылке внутри, после чего открылся сайт с красным окошком внутри.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          Как поступить Коле?<Typist.Delay ms={1000} />
+          <Typist.Paste>
+            <ContentButtons>
+              <AnswerButton isCorrect={false}>
+                Нажать на красное окошко
+              </AnswerButton>
+              <AnswerButton isCorrect={true} onAnimationEnd={goToNextStep}>
+                Позвать родителей
+              </AnswerButton>
+              <AnswerButton isCorrect={false}>
+                Не обращать внимание на красное окошко
+              </AnswerButton>
+            </ContentButtons>
+          </Typist.Paste>
+        </>
+      );
+    }
+
+    if (step === Step.SCAN_QR_CODE) {
+      return (
+        <>
+          Ребята, давайте потренируемся использовать QR-код.<Typist.Delay ms={1000} /><br/>
+          <br/>
+          Доставайте свои смартфоны, наводите на данный QR-код, нажимайте на всплывающую ссылку и посмотрите, что у вас получится!<Typist.Delay ms={1000} />
+          <Typist.Paste>
+            <div className={styles['qr-container']}>
+              <img className={styles['qr']} src="../assets/images/qr-code.gif" alt="QR-код" />
+            </div>
+            <ContentButtons>
+              <Button onClick={goToNextStep}>
+                Далее
+              </Button>
+            </ContentButtons>
+          </Typist.Paste>
+        </>
+      );
+    }
+
+    if (step === Step.QR_CODE_SCANNED) {
+      return (
+        <>
+          Молодцы!<Typist.Delay ms={1000} /><br/>
+          <br/>
+          Ребята, я вас поздравляю!<Typist.Delay ms={1000} /> Вы прошли все мои задания и научились правильно пользоваться интернетом.<Typist.Delay ms={1000} /> Я надеюсь, что вы будете вспоминать правила и тогда время, проведенное в интернете, будет приносить вам радость, знания и хорошее настроение!<Typist.Delay ms={1000} /><br/>
+          <br/>
+          До свидания, до скорых встреч!
+        </>
+      );
+    }
+
+    return '';
   };
 
   return (

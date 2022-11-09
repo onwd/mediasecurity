@@ -98,7 +98,7 @@
       svg {
         width: percentage(math.div(129, $originalWidth));
         height: percentage(math.div(75, $originalHeight));
-        transform: translate(-1 * math.div(12px, $originalWidth), -1 * math.div(48px, $originalHeight)) rotateZ(-105deg);
+        transform: translate(-7%, -50%) rotateZ(-105deg);
         transform-origin: 100% 75%;
       }
     }
