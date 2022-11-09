@@ -932,7 +932,7 @@ export function App() {
           ) : null}
         </div>
         <div className={styles['app_copyright']}>
-          <a onClick={goToNextStep}>©</a>
+          <a onClick={showCopyrightInformation}>©</a>
         </div>
         <div className={styles['copyright'] + ' ' + ((isCopyrightInformationVisible) ? styles['copyright__visible'] : '')}>
           <div className={styles['copyright_close']}>
