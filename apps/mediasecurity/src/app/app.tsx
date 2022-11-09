@@ -350,10 +350,10 @@ export function App() {
         await speak('и другое');
         await new Promise((resolve) => setTimeout(resolve, 1000));
         await new Promise((resolve) => setTimeout(resolve, 100));
-        await speak('Но будь осторожен!');
+        await speak('Но будьте осторожны!');
         await new Promise((resolve) => setTimeout(resolve, 1000));
         await new Promise((resolve) => setTimeout(resolve, 50));
-        await speak('В QR-коде может оказаться и небезопасная для тебя информация!');
+        await speak('В QR-коде может оказаться и небезопасная для вас информация!');
       }
 
       if (nextStep === Step.QUESTION_QR_CODES) {
@@ -849,7 +849,7 @@ export function App() {
           <br/>
           С помощью QR-кода можно: <Typist.Delay ms={1000} />посмотреть рекламу<Typist.Delay ms={1000} />, оплатить товары в магазине<Typist.Delay ms={1000} />, открыть сайт<Typist.Delay ms={1000} />, и другое.<Typist.Delay ms={1000} /><br/>
           <br/>
-          Но будь осторожен!<Typist.Delay ms={1000} /> В QR-коде может оказаться и небезопасная для тебя информация!<Typist.Delay ms={1000} />
+          Но будьте осторожны!<Typist.Delay ms={1000} /> В QR-коде может оказаться и небезопасная для вас информация!<Typist.Delay ms={1000} />
           <Typist.Paste>
             <ContentButtons>
               <Button onClick={goToNextStep}>
