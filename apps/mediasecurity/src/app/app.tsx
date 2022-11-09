@@ -928,7 +928,7 @@ export function App() {
             {renderContent()}
           </Content>
           {(step > Step.START) ? (
-            <Robot isGreeting={step === Step.GREETING} isTalking={isTalking} />
+            <Robot isGreeting={step === Step.GREETING || step === Step.QR_CODE_SCANNED} isTalking={isTalking} />
           ) : null}
         </div>
         <div className={styles['app_copyright']}>
