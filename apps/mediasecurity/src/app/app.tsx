@@ -131,7 +131,7 @@ export function App() {
       if (nextStep === Step.QUESTION_SITES) {
         await speak('Давайте решим задачу:');
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        await speak('Вы заходите на сайт и вылезает красное окошко на весь экран.');
+        await speak('Вы заходите на сайт и появляется красное окошко на весь экран.');
         await new Promise((resolve) => setTimeout(resolve, 1000));
         await speak('Что вы будете делать?');
       }
@@ -547,7 +547,7 @@ export function App() {
         <>
           Давайте решим задачу:<Typist.Delay ms={1000} /><br/>
           <br/>
-          Вы заходите на сайт и вылезает красное окошко на весь экран.<Typist.Delay ms={1000} /><br/>
+          Вы заходите на сайт и появляется красное окошко на весь экран.<Typist.Delay ms={1000} /><br/>
           <br/>
           Что вы будете делать?<Typist.Delay ms={1000} />
           <Typist.Paste>
