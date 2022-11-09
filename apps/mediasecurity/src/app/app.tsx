@@ -593,7 +593,9 @@ export function App() {
             <br/>
             Изображение рыболовной сети: <a href="https://thenounproject.com/icon/fish-net-2760122" target="_blank">https://thenounproject.com/icon/fish-net-2760122</a><br/>
             <br/>
-            Изображение робота: <a href="https://www.figma.com/community/file/918948005672594908" target="_blank">https://www.figma.com/community/file/918948005672594908</a>
+            Изображение робота: <a href="https://www.figma.com/community/file/918948005672594908" target="_blank">https://www.figma.com/community/file/918948005672594908</a><br/>
+            <br/>
+            Все остальные материалы, использованные в игре, являются интеллектуальной собственностью авторов.
           </div>
         </div>
       </div>
