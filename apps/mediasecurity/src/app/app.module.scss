@@ -14,6 +14,7 @@
 }
 
 .app {
+  $app: &;
   position: absolute;
   top: 0;
   left: 0;
@@ -34,6 +35,13 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: flex-end;
+    }
+  }
+
+  &__start {
+    #{$app}_content {
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -60,4 +68,25 @@
   width: calc(100vw / 5.189);
   height: calc(100vw / 5.189);
   animation: show 2s;
+}
+
+.start {
+  text-align: center;
+
+  &_school {
+    font-size: calc(100vw / 48);
+
+    @media (max-width: 768px) {
+      font-size: calc(100vw / 48 * $mobileScalingFactor);
+    }
+  }
+
+  &_title {
+    font-size: calc(100vw / 40);
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: calc(100vw / 40 * $mobileScalingFactor);
+    }
+  }
 }

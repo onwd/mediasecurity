@@ -1,4 +1,5 @@
 export enum Step {
+  START = 0,
   GREETING = 1,
   INTERNET = 2,
   QUESTION_INTERNET = 3,

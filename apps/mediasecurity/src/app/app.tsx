@@ -9,7 +9,7 @@ import Typist from 'react-typist-component';
 import { Step } from './enums/step';
 import { AnswerButton } from './components/answer/answer-button';
 
-const INITIAL_STEP = Step.GREETING;
+const INITIAL_STEP = Step.START;
 
 export function App() {
   const [isTalking, setIsTalking] = useState<boolean>(true);
@@ -31,6 +31,36 @@ export function App() {
   };
 
   const renderContent = () => {
+    if (step === Step.START) {
+      return (
+        <>
+          <Typist.Paste>
+            <div className={styles['start']}>
+              <span className={styles['start_school']}>МБОУ «С(К)ОШ №60 г. Челябинска»</span><br/>
+              <br/>
+              <br/>
+              <br/>
+              <span className={styles['start_title']}>Интерактивная игра<br/>«Я в медиабезопасности»</span>
+              <br/>
+              <br/>
+              <br/>
+              <ContentButtons>
+                <Button onClick={goToNextStep}>
+                  Начать
+                </Button>
+              </ContentButtons>
+              <br/>
+              <br/>
+              <br/>
+              Авторы:<br/>
+              Усенко Анна Сергеевна<br/>
+              Патракова Ольга Александровна
+            </div>
+          </Typist.Paste>
+        </>
+      );
+    }
+
     if (step === Step.GREETING) {
       return (
         <>
@@ -526,13 +556,15 @@ export function App() {
 
   return (
     <>
-      <div className={styles['app']}>
+      <div className={styles['app'] + ' ' + ((step === Step.START) ? styles['app__start'] : '')}>
         <Background />
         <div className={styles['app_content']}>
           <Content key={step} onTypingDone={onTypingDone}>
             {renderContent()}
           </Content>
-          <Robot isGreeting={step === Step.GREETING} isTalking={isTalking} />
+          {(step > Step.START) ? (
+            <Robot isGreeting={step === Step.GREETING} isTalking={isTalking} />
+          ) : null}
         </div>
       </div>
     </>
